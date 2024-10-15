@@ -1,0 +1,167 @@
+.compare-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(120deg, rgb(0, 0, 0), #0f0801, #0c0000, #0f0800); /* Dark background */
+    color: white;
+    padding: 40px 20px;
+    animation: fadeIn 1.5s ease-in; /* Fade-in animation */
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.phone-selection {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px; /* Centered content */
+    margin-bottom: 40px;
+    color: #1f1500;
+}
+
+.select-phone {
+    width: 45%;
+    color: black;
+    font-size: 1rem;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+}
+
+.compare-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1200px; /* Keep elements centered */
+    margin-bottom: 30px;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 50px; /* More space between products */
+}
+
+.product video {
+    width: 400px; /* Adjusted width */
+    height: 300px;
+    border-radius: 10px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smoother hover effect */
+}
+
+.product video:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Add box-shadow on hover */
+}
+
+.vs h1 {
+    font-size: 2.5rem;
+    color: #ffe4ba;
+    margin: 0 30px; /* Adjusted space between products */
+}
+
+.compare-table {
+    width: 100%;
+    max-width: 1000px; /* Keep table width responsive */
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 1.8s ease-in; /* Fade-in animation */
+}
+
+.feature {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background: linear-gradient(120deg, #0c0000, #1f1500, #281700, #0c0000); /* Gradient background for features */
+    border-radius: 10px;
+    margin-bottom: 15px; /* Space between rows */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Stronger shadow */
+}
+
+.feature-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.feature-title-text {
+    margin-left: 10px; /* Space between icon and text */
+    color: #ffe4ba; /* Light color for title */
+    font-family: 'Verdana', Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.feature-title-text:hover {
+    color: #ffdf91; /* Hover effect color */
+}
+
+.feature-value {
+    text-align: right; /* Align feature value to the right */
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffdf91; /* Light color for values */
+    animation: slideIn 1.5s ease forwards; /* Faster slide-in animation */
+    opacity: 0;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(50%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .compare-header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product {
+        margin: 20px 0;
+    }
+
+    .vs h1 {
+        font-size: 2rem;
+    }
+
+    .compare-table {
+        max-width: 100%;
+    }
+
+    .feature {
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product video {
+        width: 100%;
+        height: auto;
+    }
+
+    .vs h1 {
+        font-size: 1.5rem;
+    }
+}
