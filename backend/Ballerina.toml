@@ -1,0 +1,7 @@
+[package]
+org = "upul"
+name = "backend"
+version = "0.1.0"
+
+[dependencies]
+"ballerinax/mongodb" = "5.0.0"

@@ -1,12 +1,18 @@
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #000;
-    padding: 10px 20px;
-    color: #fff;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  padding: 10px 20px;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Increase z-index to ensure it stays on top */
+}
+
   
   .navbar-logo img {
     height: 40px;
@@ -35,9 +41,12 @@
     background-color: #333;
     border-radius: 10px;
     padding: 5px;
+    max-width: 300px; /* Limit the width */
   }
   
   .search-container input {
+    width: 100%; /* Ensures input doesn't overflow */
+    max-width: 200px; /* Set a max-width to keep it from expanding too much */
     border: none;
     background-color: transparent;
     color: #fff;
@@ -45,10 +54,12 @@
     padding: 5px;
   }
   
+  
   .search-container button {
     background: none;
     border: none;
     cursor: pointer;
     color: #fff;
   }
+  
   

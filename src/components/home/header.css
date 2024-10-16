@@ -1,12 +1,22 @@
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #290001;
-    padding: 10px 20px;
-    color: #fff;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  padding: 10px 20px;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  overflow: hidden; /* Prevents content from overflowing */
+}
+.navbar-item {
+  margin: 0 10px; /* Adjust the margin to fit all elements */
+}
+
   
   .navbar-logo img {
     height: 40px;
@@ -50,5 +60,14 @@
     border: none;
     cursor: pointer;
     color: #fff;
+  }
+  .search-bar {
+    width: 200px; /* Default width */
+  }
+  
+  @media (max-width: 768px) {
+    .search-bar {
+      width: 150px; /* Smaller width on mobile screens */
+    }
   }
   
