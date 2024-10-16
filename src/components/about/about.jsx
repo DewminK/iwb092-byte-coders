@@ -1,36 +1,36 @@
 // src/components/AboutUs.jsx
 import React, { useEffect, useState } from 'react';
-import './aboutUs.css'; // Import the CSS file for styling
+import './aboutUs.css';
 import Header from './headerAbout.jsx';
 
 const contributors = [
-  {
-    name: 'Mahima Bhashitha',
-    phone: '+94 71 130 5386',
-    email: 'mahimabashitha2001@gmail.com',
-    linkedin: 'https://www.linkedin.com/in/mahima-bhashitha-558738288/',
-    photo: './src/assets/Mahima.jpeg', // Replace with actual image URL
+  { 
+    name: 'Mahima Bhashitha', 
+    phone: '+94 71 130 5386', 
+    email: 'mahimabashitha2001@gmail.com', 
+    linkedin: 'https://www.linkedin.com/in/mahima-bhashitha-558738288/', 
+    photo: './src/assets/Mahima.jpeg' 
   },
-  {
-    name: 'Rashmitha Hansamal',
-    phone: '+94 70 124 1480',
-    email: 'hansamalkodithuwakku@gmail.com',
-    linkedin: 'https://www.linkedin.com/in/rashmitha-hansamal-610452271/',
-    photo: './src/assets/Hansa.jpeg', // Replace with actual image URL
+  { 
+    name: 'Rashmitha Hansamal', 
+    phone: '+94 70 124 1480', 
+    email: 'hansamalkodithuwakku@gmail.com', 
+    linkedin: 'https://www.linkedin.com/in/rashmitha-hansamal-610452271/', 
+    photo: './src/assets/Hansa.jpeg' 
   },
-  {
-    name: 'Tharushi Wasuda',
-    phone: '+94 71 137 4744',
-    email: 'Desilva.tharushiw@gmail.com',
-    linkedin: 'https://www.linkedin.com/in/tharushii/',
-    photo: './src/assets/Tharushi.jpeg', // Replace with actual image URL
+  { 
+    name: 'Tharushi Wasuda', 
+    phone: '+94 71 137 4744', 
+    email: 'Desilva.tharushiw@gmail.com', 
+    linkedin: 'https://www.linkedin.com/in/tharushii/', 
+    photo: './src/assets/Tharushi.jpeg' 
   },
-  {
-    name: 'Dewmin Kasmitha',
-    phone: '+94 76 502 3921',
-    email: 'dewminkasmitha30@gmail.com',
-    linkedin: 'https://www.linkedin.com/in/dewmin-deniyegedara-a190b5165/',
-    photo: './src/assets/GitHub.jpg', // Replace with actual image URL
+  { 
+    name: 'Dewmin Kasmitha', 
+    phone: '+94 76 502 3921', 
+    email: 'dewminkasmitha30@gmail.com', 
+    linkedin: 'https://www.linkedin.com/in/dewmin-deniyegedara-a190b5165/', 
+    photo: './src/assets/GitHub.jpg' 
   },
 ];
 
@@ -39,23 +39,17 @@ const AboutUs = () => {
   const [isFormVisible, setIsFormVisible] = useState(false);
 
   useEffect(() => {
-    const profilesTimer = setTimeout(() => {
-      setIsProfilesVisible(true); // Trigger profiles animation after a short delay
-    }, 300); // Adjust delay for smooth appearance
-
-    return () => clearTimeout(profilesTimer); // Cleanup timer
+    const profilesTimer = setTimeout(() => setIsProfilesVisible(true), 300);
+    return () => clearTimeout(profilesTimer);
   }, []);
 
   useEffect(() => {
     if (isProfilesVisible) {
-      const formTimer = setTimeout(() => {
-        setIsFormVisible(true); // Trigger form animation after profiles are visible
-      }, 500); // Adjust delay for the form appearance after profiles (500ms here)
-      return () => clearTimeout(formTimer); // Cleanup timer
+      const formTimer = setTimeout(() => setIsFormVisible(true), 500);
+      return () => clearTimeout(formTimer);
     }
   }, [isProfilesVisible]);
 
-  // Form submission handler
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = {
@@ -63,19 +57,18 @@ const AboutUs = () => {
       email: event.target.email.value,
       message: event.target.message.value,
     };
-    
+
     try {
       const response = await fetch('http://localhost:8080/contact/submit', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
-      
+
       if (response.ok) {
-        alert('Form submitted successfully');
-        event.target.reset(); // Clear the form after successful submission
+        const result = await response.json();
+        alert(`Form submitted successfully. Inserted ID: ${result.insertedId}`);
+        event.target.reset();
       } else {
         alert('Failed to submit form');
       }
@@ -91,12 +84,24 @@ const AboutUs = () => {
       <h1>Meet the Team</h1>
       <div className={`profiles ${isProfilesVisible ? 'visible' : ''}`}>
         {contributors.map((contributor, index) => (
-          <div key={index} className="profile-card">
-            <img src={contributor.photo} alt={`${contributor.name}'s photo`} className="profile-pic" />
+          <div
+            key={index}
+            className="profile-card"
+            style={{ animationDelay: `${index * 0.2}s` }}
+          >
+            <img
+              src={contributor.photo}
+              alt={`${contributor.name}'s photo`}
+              className="profile-pic"
+            />
             <h2>{contributor.name}</h2>
             <p>📱 {contributor.phone}</p>
             <p>📧 {contributor.email}</p>
-            <a href={contributor.linkedin} target="_blank" rel="noopener noreferrer">
+            <a
+              href={contributor.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               LinkedIn
             </a>
           </div>
