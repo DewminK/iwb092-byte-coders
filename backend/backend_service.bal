@@ -33,7 +33,7 @@ http:CorsConfig corsConfig = {
     allowOrigins: ["http://localhost:3000"],
     allowMethods: ["POST"]
 };
-listener http:Listener server = new(8080, config = {cors: corsConfig});
+listener http:Listener server = new(8080);
 
 mongodb:Client mongoClient = check new ({
     connectionString: "mongodb+srv://dbuser_01:jA1QqNNdyFStxtxz@cluster0.9w9u243.mongodb.net/note-taking-app?retryWrites=true&w=majority&appName=Cluster0",
@@ -53,6 +53,9 @@ public type UserConcern record {
     string message;
 };
 
+@http:ServiceConfig {
+    cors: corsConfig
+}
 service "/contact" on server {
 
     // POST endpoint to handle form submissions.
