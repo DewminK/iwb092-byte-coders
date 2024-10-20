@@ -1,0 +1,129 @@
+/* Global styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background: linear-gradient(to top right,#0c0d07,#000000, #7e7e7e,#000000,#000000); /* Vertical gradient from Black to Grey */
+    min-height: 100vh;
+}
+
+/* Heading styles */
+h3 {
+    text-align: center;
+    color:  #ffee6a;
+    font-size: 28px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+/* Container for phones */
+.phone-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Phone row for each brand */
+.phone-row {
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 40px;
+    padding: 10px 0;
+    border-bottom: 2px solid #bdc3c7;
+}
+
+/* Phone grid layout */
+.phone-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Individual phone item styling */
+.phone-item {
+    background-color: rgb(255, 240, 211);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.2s ease-in-out;
+    /*animation: comeUp 1s forwards; /* Animate on load */
+}
+
+/* Keyframes for entrance animation */
+@keyframes comeUp {
+    0% {
+        transform: translateY(20px); /* Start slightly lower */
+        opacity: 0; /* Completely transparent */
+    }
+    100% {
+        transform: translateY(0); /* End in place */
+        opacity: 1; /* Fully opaque */
+    }
+}
+
+.phone-item:hover {
+    transform: translateY(-10px);
+}
+
+/* Phone image styling - Increased size */
+.phone-image {
+    width: 100%;
+    height: auto;  /* Maintain aspect ratio */
+    max-height: 300px; /* Increase max height for larger images */
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+/* Phone name styling */
+.phone-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(73, 63, 45);
+    margin-bottom: 5px;
+}
+
+/* Price styling */
+.phone-info p {
+    font-size: 18px;
+    color: #251c5a;
+    margin-top: 5px;
+    font-weight: bold;
+    margin: 0;
+      
+     
+}
+.phone-info p:nth-child(2) {
+    font-weight: bold;
+  }
+  
+/* For color circles */
+.color-circles {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0; /* Spacing above and below */
+}
+
+.color-circle {
+    width: 10px; /* Size of the circle */
+    height: 10px;
+    border-radius: 50%; /* Makes the span a circle */
+    margin: 0 5px; /* Space between circles */
+    border: 1px solid #ddd; /* Optional: Add a border for better visibility */
+}
+
+/* For responsive design */
+@media (max-width: 1024px) {
+    .phone-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .phone-grid {
+        grid-template-columns: 1fr;
+    }
+}

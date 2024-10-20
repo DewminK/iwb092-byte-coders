@@ -1,0 +1,121 @@
+/* Smooth fade-in animation */
+.cart-page {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  .cart-page.loaded {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Cart Container */
+  .cart-container {
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+    background-color: #333; /* Dark background for better contrast */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Headings */
+  h1 {
+    text-align: center;
+    color: #fff152;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    color: #fff;
+  }
+  
+  /* Cart Items */
+  .cart-items {
+    margin: 20px 0;
+  }
+  
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #ffef7aac;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cart-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Item Image */
+  .cart-item-image {
+    width: 80px;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  /* Item Details */
+  .cart-item-details {
+    flex: 1;
+    margin-left: 15px;
+  }
+  
+  .cart-item-details h2 {
+    font-size: 18px;
+    margin: 0 0 5px;
+  }
+  
+  .cart-item-details p {
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  /* Cart Summary */
+  .cart-summary {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .cart-summary h2 {
+    font-size: 24px;
+    color: #fff152;
+  }
+  
+  /* Checkout Button */
+  .checkout-btn {
+    padding: 12px 24px;
+    background-color: #1b2aaf;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .checkout-btn:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+  }
+  
+
+
+  /* Ensure content doesn't overlap with the header */
+.cart-page {
+    padding-top: 70px; /* Add space equal to the header height */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  .cart-page.loaded {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  

@@ -67,7 +67,164 @@
   
   @media (max-width: 768px) {
     .search-bar {
-      width: 150px; /* Smaller width on mobile screens */
+      width: 150px; /* Smalle
+      .navbar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background-color: #290001;
+          padding: 10px 20px;
+          color: #fff;
+        }
+        
+        .navbar-logo img {
+          height: 40px;
+        }
+        
+        .navbar-links {
+          display: flex;
+          gap: 20px;
+          align-items: center;
+        }
+        
+        .navbar-links a {
+          color: #fff;
+          text-decoration: none;
+          font-weight: bold;
+          font-size: 14px;
+        }
+        
+        .navbar-links a:hover {
+          color: #ddd;
+        }
+        
+        .search-container {
+          display: flex;
+          align-items: center;
+          background-color: #333;
+          border-radius: 10px;
+          padding: 5px;
+        }
+        
+        .search-container input {
+          border: none;
+          background-color: transparent;
+          color: #fff;
+          outline: none;
+          padding: 5px;
+        }
+        
+        .search-container button {
+          background: none;
+          border: none;
+          cursor: pointer;
+          color: #fff;
+        }
+        
+       
+      
+      .hero-section {
+        text-align: center;
+        padding: 50px;
+        background: linear-gradient(to bottom, #000, #c0c0c0);
+      }
+      
+      .hero-section img {
+        width: 300px;
+        height: auto;
+        border-radius: 10px;
+      }
+      
+      .hero-section h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+      
+      .hero-section p {
+        font-size: 18px;
+        margin-bottom: 30px;
+      }
+      
+      .hero-section button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #007aff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      
+      .hero-section button:hover {
+        background-color: #0066ff;
+      }
+      .hero-section button {
+        padding: 10px 20px;
+        margin: 5px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 5px;
+      }
+      
+      .hero-section button:hover {
+        background-color: #0056b3;
+      }
+      
+      /* slideshow image */
+      
+      .carousel-img {
+        width: 100%;
+        height: 800px;
+        object-fit: cover;
+      }
+      
+      /* flyer */
+      
+      .flyer-section {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 2px;
+        background: linear-gradient(to bottom, #000, #c0c0c0);
+      }
+      
+      .flyer-box {
+        width: 15cm;
+        height: 15cm;
+        border: 2px solid #000; /* You can change the color */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background-color:white; /* Light gray background */
+        position: relative; /* To position the button at the bottom */
+        overflow: hidden; /* To ensure no overflow */
+        margin: 50px;
+      }
+      
+      .flyer-image {
+        width: 80%; /* Make image take full width */
+        height: 80%; /* Adjust height as needed */
+        object-fit: cover; /* Maintain aspect ratio */
+        margin: 5px;
+      }
+      
+      .share-button {
+        padding: 10px 20px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin-top: auto; /* Push button to the bottom */
+        margin: 5%;
+      }
+      
+      .share-button:hover {
+        background-color: #0056b3;
+      }
+    
     }
   }
   
