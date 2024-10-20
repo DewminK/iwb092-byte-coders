@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header className="navbar">
       <div className="navbar-logo">
-        <img src="/logo.png" alt="FlagX Logo" />
+      <img src="/src/assets/logo.jpeg" alt="FlagX Logo" />
       </div>
       <nav className="navbar-links">
         <Link to="/">HOME</Link>

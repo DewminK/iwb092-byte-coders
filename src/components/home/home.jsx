@@ -57,11 +57,11 @@ const Home = () => {
 
         <div className="flyer-section">
           <div className="flyer-box">
-            <img src="src/components/images/2.jpg.webp" alt="Flyer 1" className="flyer-image" />
+            <img src="src/components/images/pixel.webp" alt="Flyer 1" className="flyer-image" />
             <button className="share-button">Latest News</button>
           </div>
           <div className="flyer-box">
-            <img src="src/components/images/2.jpg.webp" alt="Flyer 2" className="flyer-image" />
+            <img src="src/components/images/16pmx.webp" alt="Flyer 2" className="flyer-image" />
             <button className="share-button">Comparison</button>
           </div>
         </div>

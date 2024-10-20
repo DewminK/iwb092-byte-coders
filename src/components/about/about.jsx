@@ -16,7 +16,7 @@ const contributors = [
     phone: '+94 70 124 1480', 
     email: 'hansamalkodithuwakku@gmail.com', 
     linkedin: 'https://www.linkedin.com/in/rashmitha-hansamal-610452271/', 
-    photo: './src/assets/Hansa.jpeg' 
+    photo: './src/assets/Hansa01.jpeg' 
   },
   { 
     name: 'Tharushi Wasuda', 

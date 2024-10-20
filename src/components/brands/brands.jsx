@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Header from './headerBrands.jsx';
 import './brands.css';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-//import CartPage from './cart/cart.jsx';
 
 const phones = {
   'Apple': [
@@ -31,7 +29,11 @@ const phones = {
   ],
 };
 
-const PhoneRow = ({ brand, models, addToCart }) => {
+const PhoneRow = ({ brand, models }) => {
+  const handleAddToCart = (modelName) => {
+    alert(`${modelName} has been added to your cart!`);
+  };
+
   return (
     <div className="phone-row">
       <h3>{brand}</h3>
@@ -50,12 +52,17 @@ const PhoneRow = ({ brand, models, addToCart }) => {
               <p style={{ color: model.inStock ? 'green' : 'red' }}>
                 {model.inStock ? 'In Stock' : 'Out of Stock'}
               </p>
-              {model.inStock && (
-                <button onClick={() => addToCart(model)} className="add-to-cart-btn">
-                  Add to Cart
-                </button>
-              )}
             </div>
+            {/* Add to Cart Button */}
+            {model.inStock && (
+              <button 
+                className="add-to-cart-button" 
+                onClick={() => handleAddToCart(model.name)}
+                style={{ backgroundColor: 'green', color: 'white', border: 'none', borderRadius: '5px', padding: '10px', cursor: 'pointer' }}
+              >
+                Add to Cart
+              </button>
+            )}
           </div>
         ))}
       </div>
@@ -63,42 +70,19 @@ const PhoneRow = ({ brand, models, addToCart }) => {
   );
 };
 
-const Brands = () => {
-  const [cartItems, setCartItems] = useState([]);
-
-  const addToCart = (item) => {
-    const existingItem = cartItems.find(cartItem => cartItem.name === item.name);
-    if (existingItem) {
-      setCartItems(cartItems.map(cartItem =>
-        cartItem.name === item.name
-          ? { ...existingItem, quantity: existingItem.quantity + 1 }
-          : cartItem
-      ));
-    } else {
-      setCartItems([...cartItems, { ...item, quantity: 1 }]);
-    }
-  };
-
+const App = () => {
   return (
-    <Router>
-      <div className="app">
-        <Header />
-        <br />
-        <br />
-        <div className="phone-container">
-          {Object.entries(phones).map(([brand, models], index) => (
-            <PhoneRow key={index} brand={brand} models={models} addToCart={addToCart} />
-          ))}
-        </div>
-        <Link to="/cart">
-          <button className="view-cart-btn">View Cart ({cartItems.reduce((total, item) => total + item.quantity, 0)})</button>
-        </Link>
+    <div className="app">
+      <Header /> {/* Display the Header */}
+      <br />
+      <br />
+      <div className="phone-container">
+        {Object.entries(phones).map(([brand, models], index) => (
+          <PhoneRow key={index} brand={brand} models={models} />
+        ))}
       </div>
-      <Routes>
-        <Route path="/cart" element={<CartPage cartItems={cartItems} />} />
-      </Routes>
-    </Router>
+    </div>
   );
 };
 
-export default Brands;
+export default App;

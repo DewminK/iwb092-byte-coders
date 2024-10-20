@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
-    background: linear-gradient(to top right,#0c0d07,#000000, #7e7e7e,#000000,#000000); /* Vertical gradient from Black to Grey */
+    background: linear-gradient(to top right, #0c0d07, #000000, #7e7e7e, #000000, #000000); /* Vertical gradient from Black to Grey */
     min-height: 100vh;
 }
 
@@ -50,17 +50,13 @@ h3 {
     text-align: center;
     padding: 20px;
     transition: transform 0.2s ease-in-out;
-    /*animation: comeUp 1s forwards; /* Animate on load */
+    opacity: 0; /* Start invisible for animation */
+    animation: fadeIn 0.5s forwards; /* Animate on load */
 }
 
-/* Keyframes for entrance animation */
-@keyframes comeUp {
-    0% {
-        transform: translateY(20px); /* Start slightly lower */
-        opacity: 0; /* Completely transparent */
-    }
-    100% {
-        transform: translateY(0); /* End in place */
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    to {
         opacity: 1; /* Fully opaque */
     }
 }
@@ -93,13 +89,12 @@ h3 {
     margin-top: 5px;
     font-weight: bold;
     margin: 0;
-      
-     
 }
+
 .phone-info p:nth-child(2) {
     font-weight: bold;
-  }
-  
+}
+
 /* For color circles */
 .color-circles {
     display: flex;
@@ -123,6 +118,10 @@ h3 {
 }
 
 @media (max-width: 768px) {
+    body {
+        background-color: #000000; /* Change mobile background to black */
+    }
+
     .phone-grid {
         grid-template-columns: 1fr;
     }
