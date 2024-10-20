@@ -34,6 +34,7 @@
     font-size: 1rem;
     background-color: rgb(0, 0, 0);
     border-radius: 10px;
+    padding: 10px; /* Added padding for better appearance */
 }
 
 .compare-header {
@@ -49,7 +50,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 50px; /* More space between products */
+    margin: 0 20px; /* Reduced margin for better alignment */
 }
 
 .product video {
@@ -77,11 +78,12 @@
     display: flex;
     flex-direction: column;
     animation: fadeIn 1.8s ease-in; /* Fade-in animation */
+    border-collapse: collapse; /* Collapsing borders */
 }
 
 .feature {
     display: flex;
-    justify-content: space-between;
+    justify-content:space-around;
     padding: 15px 20px;
     background: linear-gradient(120deg, #0c0000, #1f1500, #281700, #0c0000); /* Gradient background for features */
     border-radius: 10px;
@@ -96,7 +98,7 @@
 
 .feature-title {
     display: flex;
-    align-items: center;
+    align-items: left;
     font-size: 1.2rem;
 }
 
@@ -109,10 +111,19 @@
 }
 
 .feature-title-text:hover {
-    color: #ffdf91; /* Hover effect color */
+    color: #ffdf91;
+    text-align: justify;/* Hover effect color */
 }
 
 .feature-value {
+    text-align: left; /* Align feature value to the right */
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffdf91; /* Light color for values */
+    animation: slideIn 1.5s ease forwards; /* Faster slide-in animation */
+    opacity: 0;
+}
+.feature-value2 {
     text-align: right; /* Align feature value to the right */
     font-size: 1rem;
     font-weight: bold;
@@ -148,10 +159,21 @@
 
     .compare-table {
         max-width: 100%;
+        width: 100%; /* Ensure full width on smaller screens */
     }
 
     .feature {
         padding: 10px 15px;
+    }
+
+    .phone-selection {
+        flex-direction: column; /* Stack selections vertically on small screens */
+        align-items: center;
+    }
+
+    .select-phone {
+        width: 90%; /* Full width on smaller screens */
+        margin-bottom: 20px; /* Space between selects */
     }
 }
 
